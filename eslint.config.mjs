@@ -9,7 +9,11 @@ export default defineConfig([
         files: ['**/*.{js,mjs,cjs}'],
         plugins: { js, unicorn: eslintPluginUnicorn },
         extends: ['js/recommended'],
-        languageOptions: { globals: globals.browser },
+        languageOptions: { 
+            ecmaVersion: "latest",
+			sourceType: "module",
+            globals: globals.browser 
+        },
         rules: {
             // eslint base rules
             'no-lonely-if': 'error',
@@ -30,6 +34,4 @@ export default defineConfig([
             'unicorn/prefer-ternary': 'error',
         },
     },
-    { files: ['**/*.js'], languageOptions: { sourceType: 'commonjs' } },
-    eslintPluginPrettierRecommended,
 ]);

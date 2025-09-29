@@ -5,7 +5,8 @@
 * ```javascript
 * import { Chat } from "./chat.js";
 * ```
- */
+* This file and some other js script files that you will need imports. Think about what files will depend on others!
+*/
 
 /**
  * Renders the messages in the chat

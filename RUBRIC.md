@@ -19,14 +19,14 @@
 # UI/UX
 
 - Chat
-  - [ ] Send button is visible and clickable
-  - [ ] Input field is visible and clickable
-  - [ ] Send button is disabled when the input field is empty
-  - [ ] Search bar is visible and interactive
-  - [ ] Typing indicator is shown when the chatbot is typing
-  - [ ] Chat messages are displayed in a scrollable container
-  - [ ] Sender and receiver are displayed in a different color
+    - [ ] Send button is visible and clickable
+    - [ ] Input field is visible and clickable
+    - [ ] Send button is disabled when the input field is empty
+    - [ ] Search bar is visible and interactive
+    - [ ] Typing indicator is shown when the chatbot is typing
+    - [ ] Chat messages are displayed in a scrollable container
+    - [ ] Sender and receiver are displayed in a different color
 - Rooms
-  - [ ] Room list is displayed in a scrollable container
-  - [ ] Room list displays the list of rooms
-  - [ ] When a Room is clicked, it opens the chatroom
+    - [ ] Room list is displayed in a scrollable container
+    - [ ] Room list displays the list of rooms
+    - [ ] When a Room is clicked, it opens the chatroom

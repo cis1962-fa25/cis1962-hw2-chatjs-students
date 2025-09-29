@@ -67,8 +67,9 @@ Once you have created the API key, you can copy it and paste it into the `chat.j
 
 ```javascript
 // Insert your Gemini API key here
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
-const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/...";
+const GEMINI_API_KEY = 'YOUR_GEMINI_API_KEY';
+const GEMINI_API_URL =
+    'https://generativelanguage.googleapis.com/v1beta/models/...';
 ```
 
 ### Chat API
@@ -77,8 +78,8 @@ In order to use the Chat API for chat persistence in part 2, you will need anoth
 
 ```javascript
 // Insert your Chat API key here
-const BASE_URL = "https://hw2.cis1962.esinx.net/api";
-const API_KEY = "YOUR_API_KEY";
+const BASE_URL = 'https://hw2.cis1962.esinx.net/api';
+const API_KEY = 'YOUR_API_KEY';
 ```
 
 > ⚠️ **IMPORTANT**
@@ -88,7 +89,6 @@ const API_KEY = "YOUR_API_KEY";
 
 > Please note: If you used AI for any part of this assignment, save all the chat logs and context! Your instructors will want to see this usage during the AI synthesis activity at the end the homework. If you did not or will no use AI, you can disregard this instruction.
 
-
 ## Part 1.1. Chat
 
 > Files you will work on: `chat.js`
@@ -96,6 +96,7 @@ const API_KEY = "YOUR_API_KEY";
 We will start by implementing the chat functionality.
 
 Open the `chat.js` file and implement the following methods within the Chat class:
+
 - `constructor({ id, messages })`
 - `getMessages()`
 - `sendMessage(message)`
@@ -143,6 +144,7 @@ You will need to:
 - Add event listeners to the form and the submit button
 
 After you have implemented the `script.js` file, you should be able to:
+
 - Send messages to the chat and see the responses
 - See the typing indicator while the LLM API is pending (is typing)
 - See the chat messages in the chat messages container
@@ -159,10 +161,10 @@ Now, we will implement the chat API to save the chat history.
 The Chat API has the following endpoints:
 
 - `GET /messages` - Get all chats
-  - Response: `{ id: "default", messages: { role: string, content: string }[] }`
+    - Response: `{ id: "default", messages: { role: string, content: string }[] }`
 - `PUT /messages` - Update a chat
-  - Request: `{ id: "default", messages: { role: string, content: string }[] }`
-  - Response: `{ id: "default", messages: { role: string, content: string }[] }`
+    - Request: `{ id: "default", messages: { role: string, content: string }[] }`
+    - Response: `{ id: "default", messages: { role: string, content: string }[] }`
 
 Note that the `id` is the chat id(always set to "default" for now, we'll change this in the future).
 
@@ -175,20 +177,20 @@ Remember that you must include the API key that we provided you in ALL request h
 Now we will use the chat API to save chats and allow them to persist.
 
 - Implement the `save()` method in the `Chat` class using this API. Your implementation should:
-  - Send a `PUT` request to `/messages` with the chat id and messages
+    - Send a `PUT` request to `/messages` with the chat id and messages
 - Implement the `initializeApp()` function in the `script.js` file using this API. In this step, your implementation should only:
-  - Fetch the chat from the API
-  - Update the chat object with the fetched chat
+    - Fetch the chat from the API
+    - Update the chat object with the fetched chat
 - Implement some way to save the chat history to the API when the user sends a message and receives a response.
 
 By the end of this part, you should be able to:
+
 - Save the chat history to the API
 - Load the chat history from the API
 - Update the chat history in the API
 - Get the chat history from the API
 
 Or in other words, you have achieved "persistence" for your chat! Your chat history should be saved to the API and loaded from the API when the user refreshes the page.
-
 
 ## Part 3. Multiple Chats
 
@@ -201,13 +203,13 @@ Now, we will implement multiple chats in the chat API.
 Implement the following endpoints in the chat API:
 
 - `GET /chat` - Get all chatIds
-  - Response: `string[]`
+    - Response: `string[]`
 - `POST /chat` - Create a new chat with a randomized id
-  - Request: (nothing)
-  - Response: `{ id: string, messages: { role: string, content: string }[]  }`
-- `PUT /chat/:id` - Update a chat 
-  - Request: `{ id: string, messages: { role: string, content: string }[] }`
-  - Response: `{ id: string, messages: { role: string, content: string }[] }`
+    - Request: (nothing)
+    - Response: `{ id: string, messages: { role: string, content: string }[]  }`
+- `PUT /chat/:id` - Update a chat
+    - Request: `{ id: string, messages: { role: string, content: string }[] }`
+    - Response: `{ id: string, messages: { role: string, content: string }[] }`
 
 With these endpoints, our chat API is complete, and ready to handle multiple chats.
 
@@ -232,6 +234,7 @@ Feel free to style the chat list and chat item! Again, we don't have specific st
 ### Part 3.4. Script
 
 Open the `script.js` file and implement the following methods:
+
 - `renderChatList()`
 - `switchToChat(chatId)`
 - `createNewChat()`
@@ -239,6 +242,7 @@ Open the `script.js` file and implement the following methods:
 - Any event listeners you need to implement for your new HTML elements
 
 After you have implemented the `script.js` file, you should be able to:
+
 - See the chat list in the chat list container
 - Click on the "Create New Chat" button to create a new chat
 - Click on a chat item to switch to that chat
@@ -249,6 +253,7 @@ After you have implemented the `script.js` file, you should be able to:
 Do not worry too much about the sorted order of the chat list. You only need to show us the ID of the chat in the chat list, and just make sure that the chat list stores the correct chatIds and messages.
 
 ## AI Synthesis Activity
+
 As part of an initiative to promote honest and ethical use of AI and LLMs in programming classes, you will perform an AI synthesis activity as part of this homework. This assignment will be written within your AIAssignment.md file, and will differ based on a self-report of whether you have used AI for any part of this assignment or not. Please be truthful about your usage, because either way, you will still need to perform this AI synthesis activity! This AI synthesis activity will represent 5% of the individual homework's grade.
 
 Activity A: If you used AI
